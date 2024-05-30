@@ -8,8 +8,8 @@ export async function POST(req: Request, res: NextApiResponse) {
   }
 
   const MailchimpKey = process.env.MAILCHIMP_API_KEY;
-  const MailchimpServer = process.env.MAILCHIMP_API_SERVER;
-  const MailchimpAudience = process.env.MAILCHIMP_AUDIENCE_ID;
+  const MailchimpServer = process.env.MAILCHIMP_SERVER_PREFIX;
+  const MailchimpAudience = process.env.MAILCHIMP_LIST_ID;
 
   const customUrl = `https://${MailchimpServer}.api.mailchimp.com/3.0/lists/${MailchimpAudience}/members`;
 

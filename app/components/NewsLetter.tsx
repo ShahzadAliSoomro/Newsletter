@@ -76,7 +76,7 @@ export default function NewsLetter({ }: Props) {
               if (datas.status >= 400) {
                 setStatus(datas.status);
                 setMessage(
-                  "server error"
+                  "Subscription failed"
                 );
                 setTimeout(() => {
                   setMessage("");
@@ -99,7 +99,7 @@ export default function NewsLetter({ }: Props) {
             } catch (error) {
               setStatus(500);
               setMessage(
-                "error"
+                "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
               );
               setTimeout(() => {
                 setMessage("");

@@ -2,10 +2,10 @@ import React from "react";
 
 type Props = {};
 
-export default function Github({}: Props) {
+export default function Github({ }: Props) {
   return (
     <div className="shadow-md fixed bg-gray-100 w-[140px] h-[140px] flex items-end justify-center rotate-[45deg] -top-[70px] -right-[70px] pb-3">
-      <a href="https://www.github.com/ebraj" target="_blank">
+      <a href="https://www.github.com/shahzad" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
