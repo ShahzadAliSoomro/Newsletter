@@ -9,7 +9,7 @@ const requiredSchema = Yup.object({
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
 
-export default function NewsLetter({}: Props) {
+export default function NewsLetter({ }: Props) {
   const [status, setStatus] = useState<number | null>(null);
   const [message, setMessage] = useState<string>("");
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
@@ -76,7 +76,7 @@ export default function NewsLetter({}: Props) {
               if (datas.status >= 400) {
                 setStatus(datas.status);
                 setMessage(
-                  "Error joining the newsletter. You can directly contact me at github@ebraj."
+                  "server error"
                 );
                 setTimeout(() => {
                   setMessage("");
@@ -99,7 +99,7 @@ export default function NewsLetter({}: Props) {
             } catch (error) {
               setStatus(500);
               setMessage(
-                "Error joining the newsletter. You can directly contact me at github@ebraj."
+                "error"
               );
               setTimeout(() => {
                 setMessage("");
@@ -127,9 +127,8 @@ export default function NewsLetter({}: Props) {
             </div>
             {message && (
               <p
-                className={`${
-                  status !== 201 ? "text-red-500" : "text-green-500"
-                } pt-4 font-black `}
+                className={`${status !== 201 ? "text-red-500" : "text-green-500"
+                  } pt-4 font-black `}
               >
                 {message}
               </p>
